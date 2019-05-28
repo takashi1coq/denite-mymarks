@@ -5,6 +5,7 @@
 # ============================================================================
 
 from .mark import Source as Mark
+from denite.kind.file import Kind as File
 
 class Source(Mark):
 
