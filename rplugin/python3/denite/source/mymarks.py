@@ -22,14 +22,14 @@ class Source(Mark):
         num_marks = [str(n) for n in range(1, 10)]
         others_marks = ['\'', '`', '\"', '[', ']', '^', '.', '<', '>']
 
-        if len(context['args']) == 4
-            if context['args'][0] == ''
+        if len(context['args']) == 4:
+            if context['args'][0] == '':
                 lower_marks = []
-            if context['args'][1] == ''
+            if context['args'][1] == '':
                 upper_marks = []
-            if context['args'][2] == ''
+            if context['args'][2] == '':
                 num_marks = []
-            if context['args'][3] == ''
+            if context['args'][3] == '':
                 others_marks = []
 
         marks_str = lower_marks + upper_marks + num_marks + others_marks
