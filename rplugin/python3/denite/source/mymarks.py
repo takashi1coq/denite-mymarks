@@ -5,14 +5,12 @@
 # ============================================================================
 
 from .mark import Source as Mark
-from denite.kind.file import Kind as File
 
 class Source(Mark):
 
     def __init__(self,  vim):
         super().__init__(vim)
         self.name = 'mymarks'
-        self.kind = Kind(vim)
 
     def _get_marks(self, context):
 
