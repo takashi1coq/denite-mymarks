@@ -20,14 +20,14 @@ class Source(Mark):
         others_marks = []
 
         if len(context['args']) > 0:
-            for str in context['args']:
-                if str == 'lower':
+            for a in context['args']:
+                if a == 'lower':
                     lower_marks = [chr(c) for c in range(ord('a'), ord('z'))]
-                if str == 'upper':
+                if a == 'upper':
                     upper_marks = [chr(c) for c in range(ord('A'), ord('Z'))]
-                if str == 'num':
+                if a == 'num':
                     num_marks = [str(n) for n in range(1, 10)]
-                if str == 'others':
+                if a == 'others':
                     others_marks = ['\'', '`', '\"', '[', ']', '^', '.', '<', '>']
 
         mark_list = []
