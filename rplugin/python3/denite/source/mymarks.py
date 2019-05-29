@@ -14,28 +14,26 @@ class Source(Mark):
     def _get_marks(self, context):
 
         # file marks
+        lower_marks = []
+        upper_marks = []
+        num_marks = []
+        others_marks = []
 
-        lower_marks = [chr(c) for c in range(ord('a'), ord('z'))]
-        upper_marks = [chr(c) for c in range(ord('A'), ord('Z'))]
-        num_marks = [str(n) for n in range(1, 10)]
-        others_marks = ['\'', '`', '\"', '[', ']', '^', '.', '<', '>']
-
-        if len(context['args']) == 4:
-            if context['args'][0] == '':
-                lower_marks = []
-            if context['args'][1] == '':
-                upper_marks = []
-            if context['args'][2] == '':
-                num_marks = []
-            if context['args'][3] == '':
-                others_marks = []
-
-        marks_str = lower_marks + upper_marks + num_marks + others_marks
+        if len(context['args']) > 0:
+            for str in context['args']:
+                if str == 'lower':
+                    lower_marks = [chr(c) for c in range(ord('a'), ord('z'))]
+                if str == 'upper':
+                    upper_marks = [chr(c) for c in range(ord('A'), ord('Z'))]
+                if str == 'num':
+                    num_marks = [str(n) for n in range(1, 10)]
+                if str == 'others':
+                    others_marks = ['\'', '`', '\"', '[', ']', '^', '.', '<', '>']
 
         mark_list = []
 
         # mark order same as :marks
-        for m in marks_str:
+        for m in lower_marks + upper_marks + num_marks + others_marks:
 
             mark_info = [bufnum, lnum, col, off] = self.vim.call(
                 'getpos', '\'' + m)
