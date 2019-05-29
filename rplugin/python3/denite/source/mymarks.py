@@ -1,6 +1,7 @@
 # ============================================================================
 # FILE: mymarks.py
 # AUTHOR: takashi (takashi1coq at gmail.com)
+# License: MIT license
 # ============================================================================
 
 from .mark import Source as Mark
